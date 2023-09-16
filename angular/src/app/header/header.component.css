@@ -45,12 +45,12 @@ a{
     max-width: 642px;
     width: 65%;
     margin: 20px auto 0 auto;
-    hr{
+    /* hr{
 
         border:  none;
         height: 1px;
         background-color: lightblue;
-    }
+    } */
     p{
 
         margin: 10px 0;
