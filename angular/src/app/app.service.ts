@@ -19,7 +19,8 @@ export class AppService {
 
   constructor(private http: HttpClient) { }
 
-  url = 'http://localhost:3000/api/';
+  // url = 'http://localhost:3000/api/';
+  url = 'https://ecommerce-be-c2lf.onrender.com/api/'
   option = {
     headers: new HttpHeaders().set("Content-Type", "application/x-www-form-urlencoded")
   }
