@@ -1,0 +1,19 @@
+  <!-- DANH MUC SAN PHAM -->
+  <div class="row px-xl-5 pb-3">
+    <div class="text-center mb-4">
+      <h2 class="section-title px-5"><span class="px-2"> Danh Mục Sản Phẩm </span></h2>
+
+    </div>
+    <div *ngFor="let i of listParentPoduct" class="col-lg-4 col-md-6 pb-1">
+      <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
+        <p class="text-right">Sản phẩm</p>
+        <a  routerLink="/category/{{i._id}}"  class="cat-img position-relative overflow-hidden mb-3">
+          <img class="img-fluid" src="{{i.avatar}}" alt="">
+        </a>
+        <h5 class="font-weight-semi-bold m-0">{{i.name}}</h5>
+
+      </div>
+
+    </div>
+
+  </div>

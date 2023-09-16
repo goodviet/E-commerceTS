@@ -1,0 +1,51 @@
+<!-- 
+<div class="main">
+
+<aside>
+   
+    <ngb-accordion  #acc="ngbAccordion">
+     
+        <ngb-panel title="{{ i.name }}"  *ngFor="let i of listCategory">
+            
+            <ng-template ngbPanelContent>
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let j of i.childs">
+                       
+                        <a routerLink="/category/{{ j._id }}">{{j.name}}</a>
+                    </li>
+                </ul>
+            </ng-template>
+        </ngb-panel>
+    </ngb-accordion>
+</aside>
+
+</div> -->
+
+
+<aside>
+    <a class="btn shadow-none d-flex align-items-center justify-content-between  text-white w-100"
+        data-toggle="collapse" href="#navbar-vertical"
+        style="height: 65px; margin-top: -1px; padding: 0 30px; background-color: rgb(221, 103, 103) ;">
+        <h6 style="color: white; font-size: 20px;" class="m-0">Sản Phẩm</h6>
+        <i class="fa fa-angle-down text-light"></i>
+    </a>
+    <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0"
+        id="navbar-vertical">
+        <div class="navbar-nav w-100 overflow-hidden" style="height: 450px">
+            <div *ngFor="let i of listCategory" class="nav-item dropdown" style="height: 50px;">
+                <a class="nav-link" data-toggle="dropdown">{{i.name}}<i
+                        class="fa fa-angle-down float-right mt-1"></i></a>
+                <div style="background-color: rgb(221, 103, 103);"
+                    class="dropdown-menu position-absolute border-0 rounded-0 w-100 m-0">
+                    <a (click)="navigateToCategoryComponent()" *ngFor="let j of i.childs"
+                        routerLink="/category/{{ j._id }}" class="dropdown-item">{{j.name}}</a>
+
+                </div>
+            </div>
+
+
+        </div>
+    </nav>
+</aside>
+
+<!-- (click)="navigateToCategoryComponent()" -->

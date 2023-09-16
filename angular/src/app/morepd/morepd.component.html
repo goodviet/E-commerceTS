@@ -1,0 +1,277 @@
+<ng-container *ngIf="isVisible">
+
+
+
+  <div class="row px-xl-5 pb-3">
+
+    <div   class="col-lg-3 col-md-6 col-sm-12 pb-1">
+      <div   class="d-flex align-items-center border mb-4" style="padding: 30px; background-color: rgb(242, 135, 86); border-radius: 15px;">
+        <h1 style="color: white;" class="fa fa-check  m-0 mr-3"></h1>
+        <h5  class="font-weight-semi-bold m-0">Sản Phẩm Tốt</h5>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+      <div class="d-flex align-items-center border mb-4" style="padding: 30px; background-color: rgb(104, 158, 140); border-radius: 15px;">
+        <h1 style="color: white;" class="fa fa-truck  m-0 mr-2"></h1>
+        <h5 class="font-weight-semi-bold m-0">Giao Hàng Miễn Phí</h5>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+      <div class="d-flex align-items-center border mb-4" style="padding: 30px; background-color: rgb(235, 95, 95); border-radius: 15px;">
+        <h1 style="color: white;" class="fa fa-exchange m-0 mr-3"></h1>
+        <h5 class="font-weight-semi-bold m-0">14-Ngày Đổi Trả</h5>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+      <div class="d-flex align-items-center border mb-4" style="padding: 30px;background-color: rgb(116, 178, 197);border-radius: 15px; ">
+        <h1 style="color: white;" class="fa fa-volume-control-phone  m-0 mr-3"></h1>
+        <h5 class="font-weight-semi-bold m-0">24/7 Hỗ Trợ</h5>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- DANH MUC SAN PHAM -->
+  <div class="row px-xl-5 pb-3">
+    <div class="text-center mb-4">
+      <h2 class="section-title px-5"><span class="px-2"> Danh Mục Sản Phẩm </span></h2>
+
+    </div>
+    <div (click)="navigateToContactComponent() " *ngFor="let i of listCategory" class="col-lg-4 col-md-6 pb-1">
+      <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
+        <p class="text-right">Sản phẩm</p>
+        <a routerLink="/listproduct/{{i._id}}"  class="cat-img position-relative overflow-hidden mb-3">
+          <img class="img-fluid" src="{{i.avatar}}" alt="">
+        </a>
+        <h5 class="font-weight-semi-bold m-0">{{i.name}}</h5>
+
+      </div>
+
+    </div>
+
+
+
+
+    
+
+  </div>
+
+
+  <!-- QUA TANG  -->
+  <div class="row px-xl-5 pb-3">
+    <div class="col-md-6 pb-4">
+      <div class="position-relative bg-secondary text-center text-md-right text-white mb-2 py-5 px-5">
+        <img src="" alt="">
+        <div class="position-relative" style="z-index: 1;">
+          <h5 style="color: white;" class="text-uppercase ">Nhanh tay nhận</h5>
+          <h1 class="mb-4 font-weight-semi-bold"> các phần quà giá trị</h1>
+          <a style="color: white;" class="btn btn-outline-primary py-md-2 px-md-3">Xem thêm</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 pb-4">
+      <div class="position-relative bg-secondary text-center text-md-left text-white mb-2 py-5 px-5">
+        <img src="" alt="">
+        <div class="position-relative" style="z-index: 1;">
+          <h5 class="text-uppercase " style="color: white;">Ưu đãi thả ga</h5>
+          <h1 class="mb-4 font-weight-semi-bold">khuyến mãi sập sàn</h1>
+          <a style="color: white;" class="btn btn-outline-primary py-md-2 px-md-3">Xem thêm</a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- IPHONE -->
+    <div class="text-center mb-4">
+      <h2 class="section-title px-5"><span class="px-2">Iphone</span></h2>
+    </div>
+    <div class="col-lg-2 col-md-6 col-sm-12 pb-1" *ngFor="let i of listIphone">
+
+
+      <div class="card product-item border-0 mb-4">
+        <a (click)="navigateToContactComponent() " routerLink="/product/{{i._id}}">
+          <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <img class="img-fluid w-100" src="{{i.avatar}}" alt="">
+          </div>
+        </a>
+
+        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+          <h6 class="text-truncate mb-3">{{i.name}}</h6>
+          <div class="d-flex justify-content-center">
+            <h6 style="color: red;">{{i.price | number}} VNĐ</h6>
+            <h6 class="text-muted ml-2"><del></del></h6>
+          </div>
+        </div>
+        <div class="card-footer d-flex justify-content-between bg-light border">
+          <a (click)="navigateToContactComponent() "  routerLink="/product/{{i._id}}" class="btn btn-sm text-dark p-0"><i
+              class="fa fa-eye text-primary mr-1" ></i>Chi tiết sản
+            phẩm</a>
+          <a (click)="addToCart(i._id, i.name, i.price, 1,i.avatar)" class="btn btn-sm text-dark p-0"><i
+              class="fa fa-shopping-cart text-primary mr-1"></i>Thêm vào
+            giỏ</a>
+        </div>
+      </div>
+    </div>
+
+
+    <!--SAMSUNG -->
+    <div class="text-center mb-4">
+      <h2 class="section-title px-5"><span class="px-2">SamSung</span></h2>
+    </div>
+    <div class="col-lg-2 col-md-6 col-sm-12 pb-1" *ngFor="let i of listSamSung  ">
+
+
+      <div class="card product-item border-0 mb-4">
+        <a (click)="navigateToContactComponent() " routerLink="/product/{{i._id}}">
+          <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <img class="img-fluid w-100" src="{{i.avatar}}" alt="">
+          </div>
+        </a>
+
+        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+          <h6 class="text-truncate mb-3">{{i.name}}</h6>
+          <div class="d-flex justify-content-center">
+            <h6 style="color: red;">{{i.price | number}} VNĐ</h6>
+            <h6 class="text-muted ml-2"><del></del></h6>
+          </div>
+        </div>
+        <div class="card-footer d-flex justify-content-between bg-light border">
+          <a (click)="navigateToContactComponent() " routerLink="/product/{{i._id}}" class="btn btn-sm text-dark p-0"><i
+              class="fa fa-eye text-primary mr-1"></i>Chi tiết sản
+            phẩm</a>
+          <a (click)="addToCart(i._id, i.name, i.price, 1,i.avatar)" class="btn btn-sm text-dark p-0"><i
+              class="fa fa-shopping-cart text-primary mr-1"></i>Thêm vào
+            giỏ</a>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <!-- TAY CAM CHOI GAME -->
+
+    <div class="text-center mb-4">
+      <h2 class="section-title px-5"><span class="px-2">Tay cầm chơi Game</span></h2>
+
+    </div>
+    <div class="col-lg-2 col-md-6 col-sm-12 pb-1" *ngFor="let i of listGame">
+
+      <div class="card product-item border-0 mb-4">
+        <a (click)="navigateToContactComponent() " routerLink="/product/{{i._id}}">
+          <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <img class="img-fluid w-100" src="{{i.avatar}}" alt="">
+          </div>
+        </a>
+
+        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+          <h6 class="text-truncate mb-3">{{i.name}}</h6>
+          <div class="d-flex justify-content-center">
+            <h6 style="color: red;">{{i.price | number}} VNĐ</h6>
+            <h6 class="text-muted ml-2"><del></del></h6>
+          </div>
+        </div>
+        <div class="card-footer d-flex justify-content-between bg-light border">
+          <a (click)="navigateToContactComponent() " routerLink="/product/{{i._id}}" class="btn btn-sm text-dark p-0"><i
+              class="fa fa-eye text-primary mr-1"></i>Chi tiết sản
+            phẩm</a>
+          <a (click)="addToCart(i._id, i.name, i.price, 1,i.avatar)" class="btn btn-sm text-dark p-0"><i
+              class="fa fa-shopping-cart text-primary mr-1"></i>Thêm vào
+            giỏ</a>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+    <!-- MAN HINH MAY TINH -->
+    <div class="text-center mb-4">
+      <h2 class="section-title px-5"><span class="px-2">Màn hình máy tính </span></h2>
+    </div>
+    <div  class="col-lg-2 col-md-6 col-sm-12 pb-1" *ngFor="let i of listScreen">
+
+      <div class="card product-item border-0 mb-4">
+        <a (click)="navigateToContactComponent() " routerLink="/product/{{i._id}}">
+          <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <img class="img-fluid w-100" src="{{i.avatar}}" alt="">
+          </div>
+        </a>
+
+        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+          <h6 class="text-truncate mb-3">{{i.name}}</h6>
+          <div class="d-flex justify-content-center">
+            <h6 style="color: red;">{{i.price | number}} VNĐ</h6>
+            <h6 class="text-muted ml-2"><del></del></h6>
+          </div>
+        </div>
+        <div class="card-footer d-flex justify-content-between bg-light border">
+          <a (click)="navigateToContactComponent() " routerLink="/product/{{i._id}}" class="btn btn-sm text-dark p-0"><i
+              class="fa fa-eye text-primary mr-1"></i>Chi tiết sản
+            phẩm</a>
+          <a (click)="addToCart(i._id, i.name, i.price, 1,i.avatar)" class="btn btn-sm text-dark p-0"><i
+              class="fa fa-shopping-cart text-primary mr-1"></i>Thêm vào
+            giỏ</a>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- CHUOT MAY TINH -->
+    <div class="text-center mb-4">
+      <h2 class="section-title px-5"><span class="px-2">Thiết bị máy tính: Chuột</span></h2>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12 pb-1" *ngFor="let i of listMouse ">
+
+      <div class="card product-item border-0 mb-4">
+        <a (click)="navigateToContactComponent() " routerLink="/product/{{i._id}}">
+          <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+            <img class="img-fluid w-100" src="{{i.avatar}}" alt="">
+          </div>
+        </a>
+
+        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+          <h6 class="text-truncate mb-3">{{i.name}}</h6>
+          <div class="d-flex justify-content-center">
+            <h6 style="color: red;">{{i.price | number}} VNĐ</h6>
+            <h6 class="text-muted ml-2"><del></del></h6>
+          </div>
+        </div>
+        <div class="card-footer d-flex justify-content-between bg-light border">
+          <a (click)="navigateToContactComponent() " routerLink="/product/{{i._id}}" class="btn btn-sm text-dark p-0"><i
+              class="fa fa-eye text-primary mr-1"></i>Chi tiết sản
+            phẩm</a>
+          <a (click)="addToCart(i._id, i.name, i.price, 1,i.avatar)" class="btn btn-sm text-dark p-0"><i
+              class="fa fa-shopping-cart text-primary mr-1"></i>Thêm vào
+            giỏ</a>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+</ng-container>

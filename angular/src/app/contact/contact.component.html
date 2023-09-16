@@ -1,0 +1,82 @@
+<!-- Page Header Start -->
+<div style="background-color: rgb(163, 71, 71);" class="container-fluid mb-5">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+        <h1 style="color: white;" class="font-weight-semi-bold text-md-left text-uppercase mb-3">Liên hệ</h1>
+        <div style="font-size: 20px;" class="d-inline-flex">
+            <p class="m-0"><a style="color: rgb(37, 47, 46);font-weight: bold;" href="">Trang chủ</a></p>
+            <p class="m-0 px-2">-</p>
+            <p class="m-0" style="color: white;">Liên hệ</p>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- Contact Start -->
+<div class="container-fluid pt-5">
+    <div class="text-center mb-4">
+        <h2 class="section-title px-5"><span class="px-2">Liên hệ để giải đáp thắc mắc của bạn </span></h2>
+    </div>
+    <div class="row px-xl-5">
+        <div class="col-lg-7 mb-5">
+            <div class="contact-form">
+                <div id="success"></div>
+                <form [formGroup]="contact" (ngSubmit)="getDataContact()" name="sentMessage" id="contactForm"
+                    novalidate="novalidate">
+                    <div class="control-group">
+                        <input formControlName="fullname" type="text" class="form-control" required id="fullname"
+                            placeholder="Nhập Họ và Tên" ngModel>
+                        <span style="color: red;font-style: italic;"
+                            *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)">
+                            ( Họ Tên trống hoặc không đúng )
+                        </span>
+
+                    </div>
+                    <div class="control-group">
+                        <p class="help-block text-danger"></p>
+                        <input formControlName="email" type="email" class="form-control" required id="email"
+                            placeholder="Nhập Email" ngModel>
+                        <span style="color: red;font-style: italic;"
+                            *ngIf="email.invalid && (email.dirty || email.touched)">
+                            ( Email trống hoặc không đúng )
+                        </span>
+
+
+                    </div>
+
+                    <div class="control-group">
+                        <p class="help-block text-danger"></p>
+                        <textarea formControlName="message" class="form-control" rows="6" required id="message"
+                            placeholder="Nhập vấn đề của bạn?"></textarea>
+                        <span style="color: red;font-style: italic;"
+                            *ngIf="message.invalid && (message.dirty || message.touched)">
+
+                            Vui lòng nhập vấn đề của bạn để được giải đáp
+                        </span>
+                        <!-- <p class="help-block text-danger"></p> -->
+                        <!-- <p class="help-block text-danger"> {{ textValue }}</p> -->
+                    </div>
+                    <div>
+                        <p class="help-block text-danger"></p>
+                        <button [disabled]="contact.invalid" class="btn btn-primary py-2 px-4" type="submit"
+                            id="sendMessageButton">
+                            Gửi phản hồi</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-5 mb-5">
+            <h5 class="font-weight-semi-bold mb-3">Gửi bạn</h5>
+            <p>Gửi cho chung tôi biết những vấn đề mà bạn gặp phải. Giải đáp thắc mắc để đồng hành cùng nhau.</p>
+            <div class="d-flex flex-column mb-3">
+                <h5 class="font-weight-semi-bold mb-3">Chi Nhánh</h5>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Ho Chi Minh - Viet Nam</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
+                <p class="mb-2"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!-- Contact End -->

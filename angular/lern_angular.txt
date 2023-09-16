@@ -1,0 +1,162 @@
+
+// KIEM TRA DU LIEU BEN TRONG TS 
+
+1. // xu ly form typrscript
+
+import { ReactiveFormsModule } from '@angular/forms';
+
+2. // goi ra va su dung 
+
+  contact = new FormGroup({
+    fullname: new FormControl('', [Validators.minLength(4),  Validators.pattern("[A-Za-z ]+")]),
+    email: new FormControl('', [Validators.minLength(4), Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}')]),
+    message: new FormControl('',[Validators.minLength(20)])
+
+
+
+  })
+ 
+  get fullname() { return this.contact.controls.fullname }
+  get email() { return this.contact.controls.email }
+  get message(){return this.contact.controls.message}
+
+
+
+
+
+// kiem tra du lieu khi nguoi dung nhap vao hoac chua nhap  => thi bao loi
+*ngIf="fullname.invalid && (fullname.dirty || fullname.touched)"
+
+xu li from
+    + Form Group 
+    + Form Control 
+    + Validation 
+
+    email: new FormControl('',
+    [ Validators.minLength(4), 
+       Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}')
+       ]),
+
+// muon lay du lieu thi phai cai dat them 
+getfullname(){
+    return this.contact.get('fullname')
+}
+
+formControlName="street"
+
+
+// SU DUNG SOKET IO TRONG ANGULAR
+// cấu hình giúp angular kết nối với socket
+const io = require('socket.io')(server, {
+    cors: {
+        origin: 'http://localhost:4200',
+        methods: ['GET', 'POST'],
+        allowedHeaders: ['my-custom-header'],
+        credentials: true
+    }
+})
+
+
+
+
+
+
+// SU DUNG REDUX
+------------------
+  + createAction: tao cac action 
+  + createReducer: tao cac reducer 
+  + dispatch: day du lieu vao Store 
+  + select: lay du lie de su dung 
+
+// SU DUNG REUDX TRONG CART 
+
+---- thong tin cua mot gio hang -----
+  1. id 
+  2. name 
+  3. price 
+  4. quantity
+  5. total 
+  6. image 
+
+---- xu li du lieu 
+export const counterReducer = createReducer(
+    initialState,
+
+    ----create--------
+    on(createCart, (state, { cart }) => [...state, cart]),
+
+    ----update---------
+    nguoi dung cap nhat du lieu 
+
+    on(updateCart, (state, { cart }) => {
+
+        const carts = state.map((m) => {
+            if (m.id === cart.id) {
+                return cart;
+
+            }
+            return m
+        });
+        return carts;
+    }),
+
+
+    ----delete-----
+    on(deleteCart,(state,{cartID})=>state.filter((cart)=>cart.id !== cartID))
+);
+
+
+---------------SU DUNG Observable --------------
+    //day du lieu vao store su dung dispatch
+    this.store.dispatch(createCart(cart))
+
+    // ngrx
+    import { StoreModule } from '@ngrx/store';
+    import { counterReducer } from './counter.reducer';
+    import {cartReducer} from'./store/reducer_Cart'
+
+
+    // goi reducer da cau hinh 
+    StoreModule.forRoot({cart: cartReducer , count: counterReducer})
+
+    //Store 
+    ---------Action -------------- 
+    import { createAction } from '@ngrx/store';
+    import { Cart } from '../model/cart';
+
+    export const createCart = createAction(
+        '[Cart] CreaterCart',
+        (cart: Cart) => ({cart}));
+    export const updateCart = createAction(
+        '[Cart] UpdateCart',
+        (cart: Cart) => ({cart}));
+    export const deleteCart = createAction(
+        '[Cart] DeleteCart',
+    (cartID: String) => ({cartID}));
+
+
+    ----------- Reducer --------------
+    ----------- Model ------------(  xay dung model de luu tru du lieu )
+
+
+    
+  
+
+
+
+// Payment
+
+1. lay duoc thong tin khach hang qua id: {name, address, age, phone, email, birth}
+2. collection: 
+    + DELIVERY_METHOD => LAY RA ID CUA DELIVERY_METHOD
+3. collection:
+    + PAYMENT_METHOD => LAY RA ID CUA PAYMENT_METHOD
+4. collection: 
+    + ORDER =>  { _id, id_customer, id_delivery_method, id_payment_method, sumTotal, status, detail } 
+               
+
+
+
+
+
+typescript + swrapper + 

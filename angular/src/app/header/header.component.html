@@ -1,0 +1,92 @@
+<!-- Topbar Start -->
+<div class="container-fluid">
+    <div style="background-color: rgb(177, 60, 60)" class="row  py-2 px-xl-5">
+        <div class="col-lg-6 d-none d-lg-block">
+            <div class="d-inline-flex align-items-center">
+                <a class="text-light" href="">Thông báo</a>
+                <span class="text-muted px-2">|</span>
+                <a class="text-light" href="">Giúp đỡ</a>
+                <span class="text-muted px-2">|</span>
+                <a class="text-light" href="">Hỗ trợ</a>
+            </div>
+        </div>
+        <div class="col-lg-6 text-center text-lg-right">
+            <div class="d-inline-flex align-items-center">
+                <a class="text-dark px-2" href="facebook">
+                    <i style="color: rgb(56, 141, 201);" class="fa fa-facebook-f"></i>
+                </a>
+                <a class="text-dark px-2" href="">
+                    <i style="color: rgb(124, 204, 236);" class="fa fa-twitter"></i>
+                </a>
+                <a class="text-dark px-2" href="">
+                    <i style="color: rgb(70, 133, 228);" class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a class="text-dark px-2" href="">
+                    <i style="color: rgb(229, 190, 192);" class="fa fa-instagram"></i>
+                </a>
+                <a class="text-dark pl-2" href="">
+                    <i style="color: rgb(244, 196, 196);" class="fa fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center py-3 px-xl-5">
+        <div class="col-lg-3 d-none d-lg-block">
+            <a href="" class="text-decoration-none">
+                <h1 class="m-0 display-5 font-weight-semi-bold"><span
+                        class="text-primary font-weight-bold border px-3 mr-1">E</span>SHOP</h1>
+            </a>
+        </div>
+        <div class="col-lg-6 col-6 text-left">
+            <input  style="border-radius: 10px; border: solid 1px;" class="form-control" type="text" id="searchInput"
+                placeholder="Tìm kiếm sản phẩm " (keyup)="senData($event)">
+            <section style="position: absolute;" >
+                <p class="text-dark"  *ngIf="products.length < 1 && hashQuery">Xin loi. Khong tim thay</p>
+                <ng-template ngFor let-product [ngForOf]="products" let - i="index">
+
+
+                    <a class="text-dark" routerLink="/product/{{product._id}}">
+                        <p>{{product.name}}</p>
+                    </a>
+
+                </ng-template>
+
+            </section>
+
+            <!-- <form action="">
+                <div (click)="getData()"  class="input-group">
+                 
+       
+                    <input class="form-control" type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm ">
+                    <section class="search-result"></section>
+                    
+                    
+                    <a  style="text-decoration: none;" class="input-group-append" href="">
+                        <div class="input-group-append">
+
+                            <span class="input-group-text bg-transparent text-primary">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </form> -->
+        </div>
+
+
+
+        <div class="col-lg-3 col-6 text-right">
+            <!-- <a  class="btn border">
+                    <i style="color: rgb(218, 78, 78);" class="fa fa-heart "></i>
+                    <span style="color: black;" class="badge">0</span>
+                </a> -->
+            <a (click)="navigateToContactComponent()" routerLink="/cart" class="btn border">
+                <span>Giỏ hàng </span>
+                <i style="color: rgb(192, 68, 52)" class="fa fa-shopping-cart "></i>
+
+                <span class="badge" style="color: black;">{{count}}</span>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->

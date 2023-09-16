@@ -1,0 +1,280 @@
+<!-- <main>
+
+    <div class="row">
+        <div class="col-75">
+            <div class="container">
+                <form action="/action_page.php">
+    
+                    <div class="row">
+                        <div class="col-50">
+                            <h3>Thông tin khách hàng</h3>
+                            <label for="fname"><i class="fa fa-user"></i> Họ và Tên</label>
+                            <input type="text" id="fname" name="firstname" placeholder="Nguyen Van A">
+                            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                            <input type="text" id="email" name="email" placeholder="nguyenvana@gmail.com">
+                            <label for="adr"><i class="fa fa-address-card-o"></i> Địa chỉ</label>
+                            <input type="text" id="adr" name="address" placeholder="Thủ Đức - Hồ Chí Minh">
+                            <label for="city"><i class="fa fa-institution"></i> Thành phố</label>
+                            <input type="text" id="city" name="city" placeholder="Hồ Chí Minh">
+    
+                            <div class="row">
+                                <div class="col-50">
+                                    <label for="state">State</label>
+                                    <input type="text" id="state" name="state" placeholder="NY">
+                                </div>
+                                <div class="col-50">
+                                    <label for="zip">Zip</label>
+                                    <input type="text" id="zip" name="zip" placeholder="10001">
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-50">
+                            <h3>Thanh Toán</h3>
+                            <span>Phương thức thanh toán</span>
+                            <li *ngFor="let p of paymentMethod">
+                                <input value="{{p.id}}" type="radio">
+                                {{p.name}}
+    
+                            </li>
+                            <span>Phương thức giao hàng</span>
+                            <li *ngFor="let d of deliveryMethod">
+                                <input value="{{d.id}}" type="radio">
+                                {{d.name}}
+                            </li>
+    
+                            <label for="cname">Tên chủ thẻ</label>
+                            <input type="text" id="cname" name="cardname" placeholder="Nguyen Van A">
+                            <label for="ccnum">Mã thẻ</label>
+                            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                            <label for="expmonth">Exp Month</label>
+                            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+    
+                            <div class="row">
+                                <div class="col-50">
+                                    <label for="expyear">Exp Year</label>
+                                    <input type="text" id="expyear" name="expyear" placeholder="2018">
+                                </div>
+                                <div class="col-50">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="352">
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                </form>
+            </div>
+        </div>
+    
+    
+    </div>
+    <div class="card-body">
+    
+        <div *ngFor="let i of cartList" class="row">
+            <div class="col-lg-2 col-md-12 mb-4 mb-lg-0">
+                <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                    <img src="https://i.pinimg.com/564x/ed/2c/51/ed2c51c611589179186e586f5185806d.jpg" class="w-100"
+                        alt="Blue Jeans Jacket" />
+                    <a href="#!">
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                    </a>
+                </div>
+            </div>
+    
+            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                <p><strong>{{i.name}}</strong></p>
+                <p>Color: blue</p>
+            </div>
+    
+    
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <div class="form-outline">
+                    <label class="form-label" for="form1">Số lượng <span
+                            style="margin-left: 20px;">{{i.quantity}}</span></label>
+    
+                </div>
+                <label for="">Gía: {{i.price | number}} VNĐ</label>
+            </div>
+    
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <div class="form-outline">
+                    <label class="form-label" for="form1">Thành tiền </label>
+    
+                </div>
+                <strong>{{i.price * i.quantity | number}} VNĐ</strong>
+            </div>
+    
+    
+    
+        </div>
+        <div class="row">
+            <div class="col-lg-7"></div>
+            <div class="col-lg-5">
+                <label style="font-size: 20px; font-weight: bold;">Tổng Tiền: <span
+                        style="color: red; margin-left: 50px;">{{cartTotal | number}} VNĐ</span></label>
+    
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-lg-7 ">
+                <button (click)="finishOrder(fullname)"  type="button" class="btn" style="border-radius: 10px;" >Hoàn tất đơn hàng</button>
+            </div>
+            <div class="col-lg-5">
+        
+               <input routerLink="/cart"  style="background-color: cadetblue; border-radius: 10px;" value="Chỉnh sửa đơn hàng" class="btn" >
+            </div>
+        </div>
+        
+    
+    
+    </div>
+    
+</main> -->
+
+<main>
+    <div class="main__breadcrumb">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a routerLink="/"><i class="fa fa-home"></i> Trang chủ</a>
+            </li>
+            <li class="breadcrumb-item active">
+                Thanh Toán
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <div class="content">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="customerInfo">
+                    <h3>Thông tin khách hàng</h3>
+                    <div class="mb-3 mt-3">
+                        <label for="name" class="form-label">Họ & Tên <span class="text-danger">(*)</span>:</label>
+                        <input type="text" class="form-control" #fullName id="fullName" placeholder="Nhập Họ & Tên" name="fullName">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="email" class="form-label">Email <span class="text-danger">(*)</span>:</label>
+                        <input type="email" class="form-control" #email id="email" placeholder="Nhập Email" name="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Số Điện Thoại <span class="text-danger">(*)</span>:</label>
+                        <input type="tel" class="form-control" #phone id="phone" placeholder="Nhập Số Điện Thoại"
+                            name="phone">
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Địa Chỉ Giao Hàng <span class="text-danger">(*)</span>:</label>
+                        <input type="text" class="form-control" #address id="address" placeholder="Nhập Địa Chỉ Giao Hàng"
+                            name="address">
+                    </div>
+                    <div class="mb-3">
+                        <label for="note" class="form-label">Ghi Chú (Nếu có):</label>
+                        <input type="text" class="form-control" #note id="note" placeholder="Nhập Ghi Chú (Nếu có)"
+                            name="note">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="paymentsMethod">
+                    <h3>Phương thức thanh toán</h3>
+                    <div>
+                        <ul>
+                            <li style="list-style: none;" *ngFor="let p of paymentMethod; let i = index">
+                                <span *ngIf="i==0 else unchecked">
+                                    <input type="radio" name="payment" value="{{ p._id }}"checked >
+                                </span>
+                                <ng-template #unchecked>
+                                    <input type="radio"  name="payment" value="{{ p._id }}">
+                                </ng-template>
+                             
+                                {{ p.name }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="deliveryMethod">
+                    <h3>Phương thức giao hàng</h3>
+                    <div>
+                        <ul>
+                            <li style="list-style: none;" *ngFor="let d of deliveryMethod; let i = index">
+                               <span *ngIf="i==0 else unchecked">
+                               <input type="radio" name="delivery" value="{{ d._id }}" checked>
+                                
+                               </span>
+                               <ng-template #unchecked>
+                                <input type="radio"  name="delivery" value="{{ d._id }}">
+                            </ng-template>
+                                {{ d.name }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+    
+                <div *ngFor="let i of cartList" class="row">
+                    <div class="col-lg-2 col-md-12 mb-4 mb-lg-0">
+                        <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                            <img src="{{i.avatar}}" class="w-100"
+                                alt="Blue Jeans Jacket" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                            </a>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                        <p><strong>{{i.name}}</strong></p>
+                        <p>Color: blue</p>
+                    </div>
+            
+            
+                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                        <div class="form-outline">
+                            <label class="form-label" for="form1">Số lượng <span
+                                    style="margin-left: 20px;">{{i.quantity}}</span></label>
+            
+                        </div>
+                        <label for="">Gía: {{i.price | number}} VNĐ</label>
+                    </div>
+            
+                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                        <div class="form-outline">
+                            <label class="form-label" for="form1">Thành tiền </label>
+            
+                        </div>
+                        <strong>{{i.price * i.quantity | number}} VNĐ</strong>
+                    </div>
+            
+            
+            
+                </div>
+                <div class="row">
+                    <div class="col-lg-7"></div>
+                    <div class="col-lg-5">
+                        <label style="font-size: 20px; font-weight: bold;">Tổng Tiền: <span
+                                style="color: red; margin-left: 50px;">{{cartTotal | number}} VNĐ</span></label>
+            
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col-lg-7 ">
+                        <button  (click)="finishOrder(fullName, email, phone, address, note)" type="button" class="btn" style="border-radius: 10px;" >Hoàn tất đơn hàng</button>
+                    </div>
+                    <div class="col-lg-5">
+                
+                       <input routerLink="/cart"  style="background-color: cadetblue; border-radius: 10px;" value="Chỉnh sửa đơn hàng" class="btn" >
+                    </div>
+                </div>
+                
+            
+            
+            </div>
+        </div>
+    </div>
+</main>
