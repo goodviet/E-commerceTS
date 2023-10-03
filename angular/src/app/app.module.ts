@@ -56,6 +56,7 @@ import {cartReducer} from'./store/reducer_Cart';
 import { PayComponent } from './pay/pay.component';
 import { CustomFilterPipe } from './custom-filter-pipe.pipe';
 import { ParentcategoryComponent } from './parentcategory/parentcategory.component';
+import { ScrollTopComponent } from './scroll-top/scroll-top.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +84,7 @@ import { ParentcategoryComponent } from './parentcategory/parentcategory.compone
     ListCategoryComponent,
     CustomFilterPipe,
     ParentcategoryComponent,
+    ScrollTopComponent,
     
   ],
   imports: [

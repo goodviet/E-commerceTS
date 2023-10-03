@@ -8,7 +8,10 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent {
+
   constructor(private socket: Socket) { }
+
+  showChat = false
 
   ngOnInit() {
     this.getMessage().subscribe((kq) => {

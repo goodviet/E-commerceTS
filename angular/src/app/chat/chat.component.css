@@ -1,16 +1,41 @@
-/* #chat2 .form-control {
-    border-color: transparent;
+.chatbot{
+    height: 60px;
+    width: 60px;
+    background-color: rgb(39, 131, 167);
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    bottom: 150px;
+    right: 20px;
+    animation-name: example;
+    animation-duration: 4s;
+ 
 }
-
-#chat2 .form-control:focus {
-    border-color: transparent;
-    box-shadow: inset 0px 0px 0px 1px transparent;
+.chatbot:hover{
+    font-size: 30px;
+    transition: 0.2s;
 }
-
-.divider:after,
-.divider:before {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: #eee;
-} */
+span{
+    height: 60px;
+    width: 60px;
+    font-size: 20px;
+    font-style: italic;
+    color: rgb(11, 11, 11);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    bottom: 150px;
+    right: 80px;
+}
+@keyframes example {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+  }

@@ -1,0 +1,18 @@
+.backtop{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    background-color: tomato;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+}
+.backtop:hover{
+    opacity: 0.9;
+
+}

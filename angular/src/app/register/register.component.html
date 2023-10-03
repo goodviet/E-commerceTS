@@ -4,7 +4,7 @@
   <style>
     .background-radial-gradient {
       background-color: hsl(204, 70%, 28%);
-          border-radius: 20px;
+      border-radius: 20px;
     }
 
     #radius-shape-1 {
@@ -22,7 +22,7 @@
       right: -110px;
       width: 300px;
       height: 300px;
-       background: radial-gradient(#a6b62d, #bdc43a);
+      background: radial-gradient(#a6b62d, #bdc43a);
       overflow: hidden;
     }
 
@@ -33,10 +33,10 @@
   </style>
 
   <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
-    <div  class="row gx-lg-5 align-items-center mb-5">
+    <div class="row gx-lg-5 align-items-center mb-5">
       <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
         <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
-         Mang lại những giá trị tốt nhất <br />
+          Mang lại những giá trị tốt nhất <br />
           <span style="color: hsl(218, 81%, 75%)">cho người dùng</span>
         </h1>
         <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
@@ -56,45 +56,48 @@
 
 
 
-            <form #registerForm = "ngForm" (ngSubmit)="getDataFormRegister(registerForm.value)">
-              <!-- 2 column grid layout with text inputs for the first and last names -->
-              
+            <form #registerForm="ngForm" (ngSubmit)="getDataFormRegister(registerForm.value)">
+
+
               <div class="form-outline mb-4">
-            
+
                 <label class="form-label" for="form3Example3">Họ và Tên </label>
 
-                
-                <input type="fullname" class="form-control" #fullname="ngModel" required id="fullname" placeholder="Nhập Họ và Tên" name="fullname" ngModel>
-                <span style="color: red; " class="error" *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)">Điền đầy đủ thông tin</span>
+
+                <input type="fullname" class="form-control" #fullname="ngModel" required id="fullname"
+                  placeholder="Nhập Họ và Tên" name="fullname" ngModel>
+                <span style="color: red; " class="error"
+                  *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)">Điền đầy đủ thông tin</span>
               </div>
 
-              <!-- Email input -->
+
               <div class="form-outline mb-4">
-            
+
                 <label class="form-label" for="form3Example3">Email </label>
                 <input type="email" class="form-control" id="email" placeholder="Nhập Email" name="email" ngModel>
               </div>
 
-              <!-- Password input -->
               <div class="form-outline mb-4">
                 <label class="form-label" for="form3Example4">Mật khẩu</label>
-                <input type="password" class="form-control" id="password" placeholder="Nhập password" name="password" ngModel>
-             
+                <input type="password" class="form-control" id="password" placeholder="Nhập password" name="password"
+                  ngModel>
+
               </div>
               <div class="form-outline mb-4">
                 <label class="form-label" for="form3Example4">Số điện thoại</label>
-                <input type="phone" class="form-control" id="phone" placeholder="Nhập số điện thoại " name="phone" ngModel>
-             
+                <input type="phone" class="form-control" id="phone" placeholder="Nhập số điện thoại " name="phone"
+                  ngModel>
+
               </div>
               <div class="form-outline mb-4">
                 <label class="form-label" for="form3Example4">Địa chỉ</label>
-                <input type="address" class="form-control" id="address" placeholder="Nhập địa chỉ " name="address" ngModel>
-             
+                <input type="address" class="form-control" id="address" placeholder="Nhập địa chỉ " name="address"
+                  ngModel>
+
               </div>
 
-              <!-- Checkbox -->
               <div class="form-check d-flex justify-content-center mb-4">
-               
+
                 <label class="form-check-label" for="form2Example33">
                   Nhớ mật khẩu
                 </label>
@@ -103,16 +106,13 @@
                 </div>
               </div>
 
-              <!-- Submit button -->
 
-          
-              <!-- <span class="error error_password">Vui lòng nhập Mật Khẩu</span> -->
-              <button routerLink="/login" [disabled]="registerForm.invalid" id="registerButton" type="submit" class="btn btn-primary btn-block mb-4" >
+              <button routerLink="/login" [disabled]="registerForm.invalid" id="registerButton" type="submit"
+                class="btn btn-primary btn-block mb-4">
                 Đăng ký
-               </button>
-               
+              </button>
 
-              <!-- Register buttons -->
+
               <div class="text-center">
                 <p>hoặc đăng nhập với:</p>
                 <button type="button" class="btn btn-link btn-floating mx-1">
@@ -139,5 +139,3 @@
 
   </div>
 </section>
-
-<!-- Section: Design Block -->
