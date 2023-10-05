@@ -1,7 +1,67 @@
 
-<div class="box">
-    <span>Chat</span>
-    <div class="chatbot">
+
+
+<!-- <div class="chatpopup" #chatpopup>
+    <form action="/action_page.php" class="form-container">
+        <i class="fa-solid fa-chalkboard-user"></i>
+        <h3>Chat with us</h3>
+
+        <label for="msg">Message</label>
+        <textarea placeholder="Type message.." name="msg" required></textarea>
+
+        <button  type="submit" class="btn">Send</button>
+        <button (click)="close()"  type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+</div> -->
+
+
+<div #chatbox class="chatbox">
+    <div (click)="show()" class="iconchat">
         <i class="fa fa-comment" aria-hidden="true"></i>
+    </div>
+    <div  (click)="show()" class="textchat">
+        <h3>Nhắn với Admin</h3>
+        <h2>Xin chào !</h2>
+        
+
+
+    </div>
+    <div (click)="closeBox()" class="cancelchat">
+        <i class="fa fa-times" aria-hidden="true"></i>
+
+    </div>
+</div>
+
+<div  #chatpopup class="popupchat">
+    <div class="header">
+        <div class="avatar_chat">
+            <img src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745" alt="">
+        </div>
+        <div class="name_chat">
+        <h3>Nguyen Van A</h3>
+
+
+        </div>
+        <div (click)="close()"  class="close_chat">
+            <i class="fa fa-minus" aria-hidden="true"></i>
+        </div>
+
+    </div>
+    <div class="middle">
+        <div class="client">
+            <div class="blogchat">
+          
+            </div>
+
+        </div>
+       
+    </div>
+
+    <div class="footer">
+        <textarea placeholder="Gửi tin nhắn" name="" id="" cols="30" rows="10"></textarea>
+        <div class="send">
+            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+        </div>
+
     </div>
 </div>
