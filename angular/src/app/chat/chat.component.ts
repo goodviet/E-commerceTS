@@ -37,7 +37,7 @@ export class ChatComponent {
 
   // }
 
-  show() {
+  show()  {
     const nativeEle = this.myForm.nativeElement;
     nativeEle.style.display = 'block'
   }
