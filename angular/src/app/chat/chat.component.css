@@ -129,6 +129,7 @@ h2{
     bottom: 150px;
     right: 20px;
     border-radius: 10px;
+    display: none;
 }
 .header{
     display: flex;
