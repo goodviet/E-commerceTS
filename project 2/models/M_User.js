@@ -13,7 +13,7 @@ const userSchema = mongoose.Schema({
     gender: { type: String, default: '' },
     birthday: { type: Date, default: null },
 
-    // thêm 1 số thuộc tính
+    // thêm 1 số thuộc tínht
     status: { type: Boolean, default: false },
     trash: { type: Boolean, default: false },
     date_created: { type: Date, default: Date.now() },

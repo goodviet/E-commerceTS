@@ -16,26 +16,28 @@ export class ChatComponent {
   ) { }
   @ViewChild('chatpopup') myForm!: ElementRef;
   @ViewChild('chatbox') chatbox!: ElementRef;
-
-
-
-
-
-
-
   ngOnInit() {
     this.getMessage().subscribe((kq) => {
       console.log(kq);
 
     })
 
+    const chatfb = document.getElementById('fb-customer-chat')
+    chatfb?.setAttribute('page_id','106645201646571');
+    chatfb?.setAttribute("attribution", "biz_inbox");
 
   }
+  
+
+  
   // show(){
   //   (<HTMLStyleElement>document
   //     .getElementById('myForm')).style.display = ''
 
   // }
+
+
+
 
   show()  {
     const nativeEle = this.myForm.nativeElement;
