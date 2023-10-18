@@ -10,7 +10,7 @@ const { Server } = require("socket.io");
 // cấu hình giúp angular kết nối với socket
 const io = require('socket.io')(server, {
     cors: {
-        origin: 'http://localhost:4200',
+        origin: 'https://te-ecommerce.netlify.app',
         methods: ['GET', 'POST'],
         allowedHeaders: ['my-custom-header'],
         credentials: true
